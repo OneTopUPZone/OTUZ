@@ -119,15 +119,15 @@
       </div>
       <div>
         <label class="block font-semibold mb-1">User ID</label>
-        <input type="text" class="form-input" placeholder="Masukkan User ID" required />
+        <input id type="text" class="form-input" placeholder="Masukkan User ID" required />
       </div>
       <div>
         <label class="block font-semibold mb-1">Email</label>
-        <input type="text" class="form-input" placeholder="Masukan Alamat Email Anda" required />
+        <input id type="text" class="form-input" placeholder="Masukan Alamat Email Anda" required />
       </div>
       <div>
         <label class="block font-semibold mb-1">Metode Pembayaran</label>
-        <select class="form-input" required>
+        <select id class="form-input" required>
           <option value="">💵 Pilih Pembayaran 💵</option>
           <option>QRIS</option>
           <option>OVO</option>
@@ -152,3 +152,36 @@
   <script src="script.js"></script>
 </body>
 </html>
+<script>
+  const form = document.getElementById('topupForm');
+  const scriptURL = 'https://script.google.com/macros/s/PASTE_URL_KAMU_DI_SINI/exec';
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const data = {
+      game: document.getElementById('gameSelect').value,
+      diamond: document.getElementById('diamondSelect').value,
+      userid: document.getElementById('userid').value,
+      email: document.getElementById('email').value,
+      payment: document.getElementById('payment').value
+    };
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if (res.ok) {
+        alert('✅ Pesanan berhasil dikirim!');
+        form.reset();
+      } else {
+        alert('❌ Gagal mengirim. Coba lagi.');
+      }
+    });
+  });
+</script>
+
