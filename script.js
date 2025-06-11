@@ -23,7 +23,7 @@ document.getElementById("topupForm").addEventListener("submit", function (e) {
   const payment = document.querySelector('select').value;
 
   // Kirim data ke Google Sheets
-  fetch("https://script.google.com/macros/s/AKfycbyEQFBp2WFoXzj3Pwul44yz7He2SXJdO-hpP7N6iHM3zFZhJkkMxYxk72rgOXMO7Ag/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbwC2IwJEP0u0fTKYHJ4h6bcN99OjBX3HGMjLyaKCvlqvi1tzzxteGwKxFHFb7uG9xUK/exec", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
