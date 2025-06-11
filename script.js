@@ -3,10 +3,9 @@
 document.getElementById("topupForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  // Cek semua input terisi
+  // Validasi input
   const inputs = this.querySelectorAll("input, select");
   let valid = true;
-
   inputs.forEach((input) => {
     if (!input.value.trim()) valid = false;
   });
@@ -16,19 +15,14 @@ document.getElementById("topupForm").addEventListener("submit", function (e) {
     return;
   }
 
-  // Tampilkan pesan sukses
-  document.getElementById("successMsg").classList.remove("hidden");
-  this.reset(); // Kosongkan form
-});
-document.getElementById("topupForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
+  // Ambil nilai form
   const game = document.getElementById("gameSelect").value;
   const diamond = document.getElementById("diamondSelect").value;
   const userid = document.querySelector('input[placeholder="Masukkan User ID"]').value;
   const email = document.querySelector('input[placeholder="Masukan Alamat Email Anda"]').value;
   const payment = document.querySelector('select').value;
 
+  // Kirim data ke Google Sheets
   fetch("https://script.google.com/macros/s/AKfycbyEQFBp2WFoXzj3Pwul44yz7He2SXJdO-hpP7N6iHM3zFZhJkkMxYxk72rgOXMO7Ag/exec", {
     method: "POST",
     headers: {
@@ -41,6 +35,8 @@ document.getElementById("topupForm").addEventListener("submit", function (e) {
     document.getElementById("successMsg").classList.remove("hidden");
     document.getElementById("topupForm").reset();
   })
-  .catch(err => console.error("Error:", err));
+  .catch(err => {
+    console.error("Error:", err);
+    alert("❌ Gagal mengirim data. Coba lagi nanti.");
+  });
 });
-
