@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Top Up - Top Up Game</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-400 text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-600 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-yellow-500">One Top Up Zone</h1>
+      <nav>
+        <ul class="flex space-x-6 text-sm md:text-base font-medium">
+          <li><a href="#games" class="hover:text-yellow-500">Game</a></li>
+          <li><a href="#order" class="hover:text-yellow-500">Top Up</a></li>
+          <li><a href="#contact" class="hover:text-yellow-500">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero bg-blue-300 text-yellow-400 py-24 text-center">
+    <h2 class="text-5xl font-extrabold mb-4 drop-shadow">Top Up Game Murah & Terpercaya!</h2>
+    <p class="text-lg opacity-90">Mobile Legends, Free Fire, PUBG Mobile, Genshin Impact, dan banyak lagi!</p>
+  </section>
+
+  <!-- Game List -->
+  <section id="games" class="py-20 px-6 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Pilih Game</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\pngwing.com.png" alt="MLBB" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">Mobile Legends</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\[CITYPNG.COM]HD D-bee FF Character With Free Fire Logo PNG - 5000x5000.png" alt="Free Fire" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">Free Fire</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\PUBG Mobile Logo (PNG720p) - Vector69Com.png" alt="PUBG" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">PUBG Mobile</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\[CITYPNG.COM]HD Official Genshin Impact Game Logo PNG - 1500x1500.png" alt="Genshin" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">Genshin Impact</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\[CITYPNG.COM]HD Valorant Official Logo With Symbol PNG - 5000x5000.png" alt="Valorant" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">Valorant</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\Honor_of_Kings_logo.png" alt="HOK" class="mx-auto mb-5">
+        <h4 class="font-semibold text-black-500">Honor of Kings</h4>
+      </div>
+      <div class="game-card">
+        <img src="c:\Users\hp\Downloads\pngwing.com (1).png" alt="PB" class="mx-auto mb-3">
+        <h4 class="font-semibold text-black-300">Point Blank</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form -->
+  <section id="order" class="bg-white py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
+    <h3 class="text-3xl font-bold mb-8 text-center text-black-700">⬇️ Top Up Disini ⬇️</h3>
+    <form id="topupForm" class="space-y-5">
+      <div>
+        <label class="block font-semibold mb-1">Pilih Game</label>
+        <select id="gameSelect" class="form-input" required>
+          <option value="">🎮 Pilih Game 🎮</option>
+          <option>Mobile Legends</option>
+          <option>Free Fire</option>
+          <option>PUBG Mobile</option>
+          <option>Genshin Impact</option>
+          <option>Valorant</option>
+          <option>Honor Of Kings</option>
+          <option>Point Blank</option>
+        </select>
+        <!-- Jumlah Diamond/UC -->
+<label class="block font-semibold mb-1">Jumlah Diamond / UC</label>
+<select id="diamondSelect" class="form-input w-full mb-4" required>
+  <option value="">💎 Jumlah Diamond 💎</option>
+</select>
+<script>
+  const gameSelect = document.getElementById('gameSelect');
+  const diamondSelect = document.getElementById('diamondSelect');
+
+  const diamondOptions = {
+    "Mobile Legends": [12, 28, 36, 56, 85, 170, 257, 344, 429, 514, 706, 878, 963, 1050, 1412, 2195],
+    "Free Fire": [5, 20, 50, 70, 100, 140, 210, 280, 355, 720, 1000, 1440, 2010, 4000],
+    "PUBG Mobile": [60, 180, 325, 660, 1800, 3850, 8100],
+    "Genshin Impact": [60, 300, 980, 1980, 3280, 6480],
+    "Valorant": [125, 420, 700, 1375, 2400, 4000, 8150],
+    "Honor Of Kings": [11, 22, 45, 90, 225, 450, 900, 1800],
+    "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000]
+  };
+
+  gameSelect.addEventListener('change', function () {
+    const selectedGame = this.value;
+    const options = diamondOptions[selectedGame] || [];
+
+    // Reset pilihan diamond
+    diamondSelect.innerHTML = '<option value="">💎 Jumlah Diamond 💎</option>';
+
+    // Isi opsi diamond sesuai game
+    options.forEach(value => {
+      const opt = document.createElement('option');
+      opt.value = value;
+      opt.textContent = value;
+      diamondSelect.appendChild(opt);
+    });
+  });
+</script>
+
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">User ID</label>
+        <input type="text" class="form-input" placeholder="Masukkan User ID" required />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Email</label>
+        <input type="text" class="form-input" placeholder="Masukan Alamat Email Anda" required />
+      </div>
+      <div>
+        <label class="block font-semibold mb-1">Metode Pembayaran</label>
+        <select class="form-input" required>
+          <option value="">💵 Pilih Pembayaran 💵</option>
+          <option>QRIS</option>
+          <option>OVO</option>
+          <option>DANA</option>
+          <option>GOPAY</option>
+          <option>Transfer Bank</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Kirim Pesanan</button>
+    </form>
+    <p id="successMsg" class="mt-4 text-green-600 text-center hidden">✅ Pesanan berhasil dikirim!</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 text-center bg-gray-100">
+    <h3 class="text-3xl font-bold mb-4">Hubungi Kami</h3>
+    <p class="mb-2">WhatsApp: <a href="https://wa.me/6281234567890" class="text-blue-600 underline">+62 812-3456-7890</a></p>
+    <p>Email: <a href="mailto:support@topupzone.com" class="text-blue-600 underline">support@topupzone.com</a></p>
+    <p class="text-sm mt-6 text-gray-500">© 2025 One Top Up Zone. All rights reserved.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
