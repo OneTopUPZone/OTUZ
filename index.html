@@ -31,14 +31,16 @@
         /* Styling Dark Mode (untuk menimpa default Tailwind atau mengatur properti kompleks) */
         .dark {
             background-color: #1a202c; /* bg-gray-900 */
-            color: #e2e8f0; /* text-gray-200 */
+            color: #e2e8f0; /* text-gray-200 (default text color for dark mode) */
         }
         .dark .bg-white { /* Untuk elemen yang seharusnya putih di mode terang */
             background-color: #2d3748; /* bg-gray-800 */
-            color: #e2e8f0;
+            color: #e2e8f0; /* Default text color in dark mode for white elements */
         }
+        /* Ini adalah heading h3 di bagian "Top Up Disini" */
+        /* Kita ingin ini berwarna terang saat dark mode */
         .dark .text-black-700 { /* Khusus untuk heading Top Up Disini */
-            color: #e2e8f0;
+            color: #e2e8f0 !important; /* Ubah ini menjadi terang saat dark mode */
         }
         .dark .shadow, .dark .shadow-md, .dark .shadow-xl {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.24);
@@ -49,13 +51,14 @@
         .dark .hover\:border-yellow-400:hover {
             border-color: #f6e05e; /* yellow-400 */
         }
-        .dark .form-input-custom { /* Mengganti form-input manual */
+        /* Sesuaikan input form di dark mode agar teks inputnya tetap terang */
+        .dark .form-input-custom {
             background-color: #4a5568; /* bg-gray-700 */
-            color: #e2e8f0;
+            color: #e2e8f0; /* Teks input jadi terang */
             border-color: #a0aec0;
         }
         .dark .form-input-custom::placeholder {
-            color: #cbd5e0;
+            color: #cbd5e0; /* Placeholder juga terang */
         }
         .dark .bg-gray-100 { /* Untuk contact section (yang sebelumnya bg-gray-100) */
             background-color: #1a202c;
@@ -66,40 +69,32 @@
         .dark .text-gray-700 {
             color: #e2e8f0;
         }
-        /* Dalam dark mode, buat teks di dalam form order jadi hitam */
+        
+        /* --- ATURAN UNTUK TEKS FORMULIR DI DARK MODE (Diperbaiki) --- */
+        /* Hapus warna teks hitam di Dark Mode untuk form order */
+        /* Biarkan label, option, input, placeholder berwarna terang seperti default dark mode */
         .dark #order label,
         .dark #order option,
         .dark #order input::placeholder {
-            color: black !important; /* Gunakan !important untuk menimpa aturan lain */
+            color: #e2e8f0 !important; /* Teks labels, option, placeholder jadi terang */
         }
-        
-        /* Pastikan teks input dan select juga hitam saat dark mode */
+
+        /* Pastikan teks input dan select juga terang saat dark mode */
         .dark #order select,
         .dark #order input {
-            color: black !important; /* Teks yang diketik atau dipilih */
-            background-color: white !important; /* Latar belakang input tetap putih */
-            border-color: #d1d5db !important; /* border-gray-300 */
+            color: #e2e8f0 !important; /* Teks yang diketik atau dipilih jadi terang */
+            background-color: #4a5568 !important; /* bg-gray-700 untuk input/select bg */
+            border-color: #a0aec0 !important; /* border-gray-400 */
         }
-        
-        /* Kustomisasi dark mode untuk form-input-custom pada select dan input */
-        .dark .form-input-custom {
-            color: black !important;
-            background-color: white !important;
-            border-color: #d1d5db !important;
-        }
-        
-        /* Hapus dark mode untuk text-black-700 di h3 karena jadi hitam */
-        .dark .text-black-700 { /* Khusus untuk heading Top Up Disini */
-            color: black !important; /* Ubah ini menjadi hitam saat dark mode */
-        }
-        
+
         /* Sesuaikan warna teks feedback di dark mode agar tetap terbaca */
         .dark .input-error {
-            color: #dc2626 !important; /* Misalnya, merah yang lebih gelap */
+            color: #f87171 !important; /* Merah yang cocok untuk dark mode */
         }
         .dark .input-info {
-            color: #16a34a !important; /* Misalnya, hijau yang lebih gelap */
+            color: #4ade80 !important; /* Hijau yang cocok untuk dark mode */
         }
+
         /* Custom style untuk pesan error/info di bawah input */
         .input-feedback {
             font-size: 0.875rem; /* text-sm */
@@ -119,8 +114,6 @@
             background-repeat: no-repeat;
             position: relative; /* Penting untuk overlay */
             overflow: hidden; /* Memastikan overlay tidak keluar */
-            /* Anda bisa menambahkan overlay di sini jika perlu */
-            /* Misalnya, untuk kegelapan latar belakang */
         }
         .game-card-bg::before {
             content: '';
@@ -232,7 +225,7 @@
         </div>
     </section>
 
-    <section id="order" class="bg-black py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
+    <section id="order" class="bg-white py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
         <h3 class="text-3xl font-bold mb-8 text-center text-black-700">⬇️ Top Up Disini ⬇️</h3>
         <form id="topupForm" class="space-y-5">
             <div>
