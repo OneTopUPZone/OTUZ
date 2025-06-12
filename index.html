@@ -66,6 +66,40 @@
         .dark .text-gray-700 {
             color: #e2e8f0;
         }
+        /* Dalam dark mode, buat teks di dalam form order jadi hitam */
+        .dark #order label,
+        .dark #order option,
+        .dark #order input::placeholder {
+            color: black !important; /* Gunakan !important untuk menimpa aturan lain */
+        }
+        
+        /* Pastikan teks input dan select juga hitam saat dark mode */
+        .dark #order select,
+        .dark #order input {
+            color: black !important; /* Teks yang diketik atau dipilih */
+            background-color: white !important; /* Latar belakang input tetap putih */
+            border-color: #d1d5db !important; /* border-gray-300 */
+        }
+        
+        /* Kustomisasi dark mode untuk form-input-custom pada select dan input */
+        .dark .form-input-custom {
+            color: black !important;
+            background-color: white !important;
+            border-color: #d1d5db !important;
+        }
+        
+        /* Hapus dark mode untuk text-black-700 di h3 karena jadi hitam */
+        .dark .text-black-700 { /* Khusus untuk heading Top Up Disini */
+            color: black !important; /* Ubah ini menjadi hitam saat dark mode */
+        }
+        
+        /* Sesuaikan warna teks feedback di dark mode agar tetap terbaca */
+        .dark .input-error {
+            color: #dc2626 !important; /* Misalnya, merah yang lebih gelap */
+        }
+        .dark .input-info {
+            color: #16a34a !important; /* Misalnya, hijau yang lebih gelap */
+        }
         /* Custom style untuk pesan error/info di bawah input */
         .input-feedback {
             font-size: 0.875rem; /* text-sm */
@@ -109,13 +143,13 @@
         }
 
         /* Latar Belakang Spesifik untuk Setiap Game */
-        .game-card-mlbb { background-image: url('images/game-bg-mlbb.jpg'); }
-        .game-card-ff { background-image: url('images/game-bg-ff.jpg'); }
-        .game-card-pubgm { background-image: url('images/game-bg-pubgm.jpg'); }
-        .game-card-genshin { background-image: url('images/game-bg-genshin.jpg'); }
-        .game-card-valorant { background-image: url('images/game-bg-valorant.jpg'); }
-        .game-card-hok { background-image: url('images/game-bg-hok.jpg'); }
-        .game-card-pb { background-image: url('images/game-bg-pb.jpg'); }
+        .game-card-mlbb { background-image: url('images/ML-BG.jpg'); }
+        .game-card-ff { background-image: url('images/FF-BG.jpg'); }
+        .game-card-pubgm { background-image: url('images/PUBGM-BG.jpg'); }
+        .game-card-genshin { background-image: url('images/GENSHIN-BG.jpg'); }
+        .game-card-valorant { background-image: url('images/VALO-BG.jpg'); }
+        .game-card-hok { background-image: url('images/HOK-BG.jpg'); }
+        .game-card-pb { background-image: url('images/PB-BG.jpg'); }
 
         /* Untuk memastikan teks nama game terlihat */
         .game-card-bg h4 {
@@ -198,7 +232,7 @@
         </div>
     </section>
 
-    <section id="order" class="bg-white py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
+    <section id="order" class="bg-black py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
         <h3 class="text-3xl font-bold mb-8 text-center text-black-700">⬇️ Top Up Disini ⬇️</h3>
         <form id="topupForm" class="space-y-5">
             <div>
