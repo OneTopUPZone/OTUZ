@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One Top Up - Top Up Game</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-400 text-gray-800 font-sans">
+  <style>
+    details[open] summary::after {
+      content: "−";
+    }
+    details summary::after {
+      content: "+";
+      float: right;
+      font-weight: bold;
+    }
+  </style>
 
  <!-- Navbar -->
   <header class="bg-gray-800 text-white sticky top-0 z-40 shadow-md">
