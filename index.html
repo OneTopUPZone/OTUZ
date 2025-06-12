@@ -36,7 +36,7 @@
         .dark .border-transparent {
             border-color: #2d3748; /* Biarkan transparan atau samakan dengan bg */
         }
-        .dark .hover\:border-yellow-400:hover { /* Perbaikan backslash pada hover: */
+        .dark .hover\:border-yellow-400:hover {
             border-color: #f6e05e; /* yellow-400 */
         }
         .dark .form-input {
@@ -55,6 +55,18 @@
         }
         .dark .text-gray-700 {
             color: #e2e8f0;
+        }
+
+        /* Custom style untuk pesan error/info di bawah input */
+        .input-feedback {
+            font-size: 0.875rem; /* text-sm */
+            margin-top: 0.25rem; /* mt-1 */
+        }
+        .input-error {
+            color: #ef4444; /* text-red-500 */
+        }
+        .input-info {
+            color: #10b981; /* text-green-500 */
         }
     </style>
 </head>
@@ -146,6 +158,13 @@
                     <option>Honor Of Kings</option>
                     <option>Point Blank</option>
                 </select>
+                <div id="gameSelect-feedback" class="input-feedback"></div>
+            </div>
+
+            <div>
+                <label for="userID" class="block font-semibold mb-1">User ID</label>
+                <input type="text" id="userID" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukkan User ID" required />
+                <div id="userID-feedback" class="input-feedback"></div>
             </div>
 
             <div>
@@ -153,16 +172,8 @@
                 <select id="diamondSelect" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
                     <option value="">💎 Jumlah Diamond 💎</option>
                 </select>
-            </div>
-
-            <div>
-                <label for="userID" class="block font-semibold mb-1">User ID</label>
-                <input type="text" id="userID" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukkan User ID" required />
-            </div>
-
-            <div>
-                <label for="email" class="block font-semibold mb-1">Email</label>
-                <input type="email" id="email" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukan Alamat Email Anda" required />
+                <div id="diamondSelect-feedback" class="input-feedback"></div>
+                <div id="priceDisplay" class="mt-2 text-sm text-green-700 font-medium"></div>
             </div>
 
             <div>
@@ -175,14 +186,21 @@
                     <option>GOPAY</option>
                     <option>Transfer Bank</option>
                 </select>
+                <div id="paymentMethod-feedback" class="input-feedback"></div>
             </div>
 
-            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded w-full">Kirim Pesanan</button>
+            <div>
+                <label for="email" class="block font-semibold mb-1">Email</label>
+                <input type="email" id="email" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukan Alamat Email Anda" required />
+                <div id="email-feedback" class="input-feedback"></div>
+            </div>
+
+            <button type="submit" id="submitButton" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded w-full">Kirim Pesanan</button>
         </form>
         <p id="successMsg" class="mt-4 text-green-600 text-center hidden">✅ Pesanan berhasil dikirim!</p>
     </section>
 
-    <a href="https://wa.me/6281234567890" class="fixed bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg z-50 hover:bg-green-600" title="Chat via WhatsApp">
+    <a href="https://wa.me/6281234567890" class="fixed bottom-6 right-6 bg-green-500 p-3 rounded-full shadow-lg z-50 hover:bg-green-600" title="Chat via WhatsApp" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
             <path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.5 4 1.4 5.8L0 24l6.3-1.6C8.1 23.5 10 24 12 24c6.6 0 12-5.4 12-12S18.6 0 12 0zm0 21.6c-1.8 0-3.5-.5-5.1-1.4l-.4-.3-3.8 1 1-3.7-.2-.4C2.9 15.6 2.4 13.9 2.4 12c0-5.3 4.3-9.6 9.6-9.6S21.6 6.7 21.6 12 17.3 21.6 12 21.6z"/>
             <path d="M17.6 14.5c-.3-.1-1.6-.8-1.9-.9-.3-.1-.5-.2-.7.1s-.8.9-1 .1c-.3-.7-.6-.9-1.2-1.3-.4-.3-.6-.2-.9 0-.3.2-.7.8-.9 1.1-.2.2-.5.2-.8.1-.8-.3-1.5-.7-2.1-1.3-.5-.5-1-1.2-1.3-2-.1-.3 0-.6.1-.8.2-.2.5-.5.7-.8.2-.3.3-.5.5-.9.1-.3 0-.6-.1-.9-.1-.3-.7-1.7-1-2.3-.2-.4-.4-.4-.7-.4-.2 0-.6 0-1 .4C5 4.3 3.9 6 4 8c.1 2.4 1.2 4.5 2.7 6.1 1.6 1.6 3.7 2.6 6.1 2.7 2.1.1 3.7-.9 4.3-1.5.4-.4.5-.6.6-.8.1-.2.1-.4-.2-.5z"/>
@@ -208,14 +226,19 @@
     </section>
 
     <section id="contact" class="py-20 text-center bg-gray-800 text-white">
-    <h3 class="text-3xl font-bold mb-4">Hubungi Kami</h3>
-    <p class="mb-2">WhatsApp: <a href="https://wa.me/6281234567890" class="text-white underline">+62 812-3456-7890</a></p>
-    <p>Email: <a href="mailto:support@topupzone.com" class="text-white underline">support@topupzone.com</a></p>
-    <p class="text-sm mt-6 text-white text-opacity-70">© 2025 One Top Up Zone. All rights reserved.</p>
-</section>
+        <h3 class="text-3xl font-bold mb-4">Hubungi Kami</h3>
+        <p class="mb-2">WhatsApp: <a href="https://wa.me/6281234567890" class="text-white underline" target="_blank">+62 812-3456-7890</a></p>
+        <p>Email: <a href="mailto:support@topupzone.com" class="text-white underline">support@topupzone.com</a></p>
+        <p class="text-sm mt-6 text-white text-opacity-70">© 2025 One Top Up Zone. All rights reserved.</p>
+    </section>
 
-    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script> <script>
-        // Inisialisasi Swiper Slider
+    <div class="fixed top-4 right-4 z-50">
+        <button id="toggleDark" class="bg-black text-white px-3 py-1 rounded shadow text-sm">Dark Mode</button>
+    </div>
+
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // --- 1. Swiper Slider Initialization ---
         new Swiper(".mySwiper", {
             loop: true,
             autoplay: {
@@ -232,56 +255,39 @@
             },
         });
 
-        // Dark Mode Script
+        // --- 2. Dark Mode Toggle ---
         const toggleDark = document.getElementById('toggleDark');
-        // Pastikan tombol dark mode ada di sini juga atau pastikan id-nya unik
-        // Menambahkan tombol dark mode di akhir body seperti di perbaikan sebelumnya
-        const darkModeButtonHtml = `
-            <div class="fixed top-4 right-4 z-50">
-                <button id="toggleDark" class="bg-black text-white px-3 py-1 rounded shadow text-sm">Dark Mode</button>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', darkModeButtonHtml); // Tambahkan tombol di akhir body
-
-        // Referensikan kembali tombol setelah ditambahkan ke DOM
-        const updatedToggleDark = document.getElementById('toggleDark');
-
-        updatedToggleDark.addEventListener('click', () => {
+        toggleDark.addEventListener('click', () => {
             document.body.classList.toggle('dark');
             localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-            updatedToggleDark.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+            toggleDark.textContent = document.body.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
         });
-
+        // Set initial state from localStorage
         if (localStorage.getItem('theme') === 'dark') {
             document.body.classList.add('dark');
-            updatedToggleDark.textContent = 'Light Mode';
+            toggleDark.textContent = 'Light Mode';
         } else {
-            updatedToggleDark.textContent = 'Dark Mode';
+            toggleDark.textContent = 'Dark Mode';
         }
 
-        // Auto save form to localStorage
+        // --- 3. Form Logic & Data (Game Options, Prices, Nickname Simulation) ---
         const form = document.getElementById('topupForm');
-        const inputs = form.querySelectorAll('input[id], select[id]');
-        inputs.forEach(input => {
-            input.value = localStorage.getItem(input.id) || input.value;
-            input.addEventListener('input', () => localStorage.setItem(input.id, input.value));
-        });
-
-        // Game image click scroll to order
-        document.querySelectorAll('#games img').forEach(img => {
-            img.style.cursor = 'pointer';
-            img.addEventListener('click', () => {
-                const gameName = img.alt;
-                const gameSelectElement = document.getElementById('gameSelect');
-                gameSelectElement.value = gameName;
-                gameSelectElement.dispatchEvent(new Event('change'));
-                document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Estimasi harga
         const gameSelect = document.getElementById('gameSelect');
+        const userIDInput = document.getElementById('userID');
         const diamondSelect = document.getElementById('diamondSelect');
+        const paymentMethodSelect = document.getElementById('paymentMethod');
+        const emailInput = document.getElementById('email');
+        const submitButton = document.getElementById('submitButton');
+
+        const successMsg = document.getElementById('successMsg');
+        const priceDisplay = document.getElementById('priceDisplay');
+
+        // Feedback elements for validation
+        const gameSelectFeedback = document.getElementById('gameSelect-feedback');
+        const userIDFeedback = document.getElementById('userID-feedback');
+        const diamondSelectFeedback = document.getElementById('diamondSelect-feedback');
+        const paymentMethodFeedback = document.getElementById('paymentMethod-feedback');
+        const emailFeedback = document.getElementById('email-feedback');
 
         const diamondOptions = {
             "Mobile Legends": [12, 28, 36, 56, 85, 170, 257, 344, 429, 514, 706, 878, 963, 1050, 1412, 2195],
@@ -317,6 +323,47 @@
             }
         };
 
+        // Simulated Nickname Database (In real app, this would be an API call)
+        const gameNicknames = {
+            "Mobile Legends": {
+                "12345678": "ProPlayerMLBB",
+                "87654321": "NoobSlayer",
+                "99999999": "MythicLegend"
+            },
+            "Free Fire": {
+                "11223344": "GarenaPro",
+                "55667788": "HeadshotKing"
+            },
+            "Genshin Impact": {
+                "100000000": "TravelerAether",
+                "100000001": "Luminesce"
+            },
+            // Add more games and IDs/nicknames as needed
+        };
+
+        // --- 4. Form Event Listeners & Functions ---
+
+        // Function to clear feedback messages
+        function clearFeedback() {
+            gameSelectFeedback.textContent = '';
+            gameSelectFeedback.className = 'input-feedback';
+            userIDFeedback.textContent = '';
+            userIDFeedback.className = 'input-feedback';
+            diamondSelectFeedback.textContent = '';
+            diamondSelectFeedback.className = 'input-feedback';
+            paymentMethodFeedback.textContent = '';
+            paymentMethodFeedback.className = 'input-feedback';
+            emailFeedback.textContent = '';
+            emailFeedback.className = 'input-feedback';
+        }
+
+        // Function to display feedback
+        function showFeedback(element, message, type = 'error') {
+            element.textContent = message;
+            element.className = `input-feedback input-${type}`;
+        }
+
+        // Handle Game Selection Change
         gameSelect.addEventListener('change', function () {
             const selectedGame = this.value;
             const options = diamondOptions[selectedGame] || [];
@@ -327,77 +374,200 @@
                 opt.textContent = value;
                 diamondSelect.appendChild(opt);
             });
-            priceDiv.textContent = '';
+            priceDisplay.textContent = ''; // Reset price when game changes
+            userIDInput.value = ''; // Clear User ID
+            userIDFeedback.textContent = ''; // Clear User ID feedback
+            userIDFeedback.className = 'input-feedback';
+            
+            // Clear diamond select if game selection invalid
+            if (!selectedGame) {
+                diamondSelect.innerHTML = '<option value="">💎 Jumlah Diamond 💎</option>';
+            }
+            saveFormState(); // Save state
         });
 
-        const priceDiv = document.createElement('div');
-        priceDiv.className = 'mt-2 text-sm text-green-700 font-medium';
-        diamondSelect.after(priceDiv);
+        // Handle User ID Input Change (Simulated Validation)
+        userIDInput.addEventListener('input', function() {
+            const selectedGame = gameSelect.value;
+            const userID = this.value.trim();
+            userIDFeedback.textContent = ''; // Clear previous feedback
 
+            if (userID.length < 5) { // Simple length check
+                showFeedback(userIDFeedback, 'User ID terlalu pendek', 'error');
+                return;
+            }
+
+            if (selectedGame && gameNicknames[selectedGame] && gameNicknames[selectedGame][userID]) {
+                const nickname = gameNicknames[selectedGame][userID];
+                showFeedback(userIDFeedback, `Nickname: ${nickname}`, 'info');
+            } else if (selectedGame && userID.length >= 5) { // Only show invalid if game selected and length is okay
+                 showFeedback(userIDFeedback, 'User ID tidak ditemukan atau tidak valid', 'error');
+            }
+            saveFormState(); // Save state
+        });
+        // Clear nickname when user ID input is focused
+        userIDInput.addEventListener('focus', function() {
+            if (userIDFeedback.classList.contains('input-info')) {
+                userIDFeedback.textContent = '';
+                userIDFeedback.className = 'input-feedback';
+            }
+        });
+
+
+        // Handle Diamond Selection Change (Update Price)
         diamondSelect.addEventListener('change', () => {
             const game = gameSelect.value;
             const qty = diamondSelect.value;
             const price = priceMap?.[game]?.[qty];
-            priceDiv.textContent = price ? `Estimasi Harga: Rp${price.toLocaleString('id-ID')}` : '';
+            priceDisplay.textContent = price ? `Estimasi Harga: Rp${price.toLocaleString('id-ID')}` : '';
+            saveFormState(); // Save state
         });
+        
+        // Save other form elements on input
+        paymentMethodSelect.addEventListener('change', saveFormState);
+        emailInput.addEventListener('input', saveFormState);
 
+
+        // --- 5. Form Submission Logic ---
         form.addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent default form submission
 
-            const selectedGame = gameSelect.value;
-            const selectedDiamonds = diamondSelect.value;
-            const userID = document.getElementById('userID').value;
-            const email = document.getElementById('email').value;
-            const paymentMethod = document.getElementById('paymentMethod').value;
-            const estimatedPrice = priceMap?.[selectedGame]?.[selectedDiamonds];
+            clearFeedback(); // Clear all previous feedback messages
 
-            if (!selectedGame || !selectedDiamonds || !userID || !email || !paymentMethod) {
-                alert('Mohon lengkapi semua data formulir!');
-                return;
+            let isValid = true; // Flag for form validation
+
+            // Manual Validation for each field
+            if (!gameSelect.value) {
+                showFeedback(gameSelectFeedback, 'Pilih game terlebih dahulu.', 'error');
+                isValid = false;
+            }
+            if (!userIDInput.value.trim()) {
+                showFeedback(userIDFeedback, 'Masukkan User ID Anda.', 'error');
+                isValid = false;
+            } else if (!gameNicknames[gameSelect.value]?.[userIDInput.value.trim()]) {
+                // Also check if User ID is actually validated and found
+                showFeedback(userIDFeedback, 'User ID tidak valid atau tidak ditemukan.', 'error');
+                isValid = false;
+            }
+            if (!diamondSelect.value) {
+                showFeedback(diamondSelectFeedback, 'Pilih jumlah diamond/UC.', 'error');
+                isValid = false;
+            }
+            if (!paymentMethodSelect.value) {
+                showFeedback(paymentMethodFeedback, 'Pilih metode pembayaran.', 'error');
+                isValid = false;
+            }
+            if (!emailInput.value.trim() || !emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+                showFeedback(emailFeedback, 'Masukkan alamat email yang valid.', 'error');
+                isValid = false;
             }
 
-            console.log("Pesanan Baru:");
-            console.log("Game:", selectedGame);
-            console.log("Jumlah Diamond/UC:", selectedDiamonds);
-            console.log("User ID:", userID);
-            console.log("Email:", email);
-            console.log("Metode Pembayaran:", paymentMethod);
-            console.log("Estimasi Harga:", estimatedPrice ? `Rp${estimatedPrice.toLocaleString('id-ID')}` : 'Tidak tersedia');
+            if (!isValid) {
+                successMsg.classList.add('hidden'); // Hide success message if validation fails
+                return; // Stop the submission
+            }
 
-            const successMsg = document.getElementById('successMsg');
-            successMsg.classList.remove('hidden');
+            // Show loading state on button
+            submitButton.textContent = 'Memproses Pesanan...';
+            submitButton.disabled = true;
+            submitButton.classList.add('opacity-70', 'cursor-not-allowed');
 
+            // Simulate API call (replace with actual backend call)
             setTimeout(() => {
-                form.reset();
-                successMsg.classList.add('hidden');
-                priceDiv.textContent = '';
-                inputs.forEach(input => localStorage.removeItem(input.id));
-            }, 3000);
+                const selectedGame = gameSelect.value;
+                const selectedDiamonds = diamondSelect.value;
+                const userID = userIDInput.value.trim();
+                const email = emailInput.value.trim();
+                const paymentMethod = paymentMethodSelect.value;
+                const estimatedPrice = priceMap?.[selectedGame]?.[selectedDiamonds];
+                const nickname = gameNicknames[selectedGame]?.[userID] || "N/A"; // Get validated nickname
 
-            const whatsappMessage = `Halo One Top Up Zone, saya ingin top up game:
-            Game: ${selectedGame}
-            Jumlah: ${selectedDiamonds}
-            User ID: ${userID}
-            Email: ${email}
-            Metode Pembayaran: ${paymentMethod}
-            Estimasi Harga: ${estimatedPrice ? `Rp${estimatedPrice.toLocaleString('id-ID')}` : 'Tidak tersedia'}
-            Terima kasih!`;
+                console.log("Pesanan Baru:");
+                console.log("Game:", selectedGame);
+                console.log("Jumlah Diamond/UC:", selectedDiamonds);
+                console.log("User ID:", userID, "(Nickname:", nickname + ")");
+                console.log("Email:", email);
+                console.log("Metode Pembayaran:", paymentMethod);
+                console.log("Estimasi Harga:", estimatedPrice ? `Rp${estimatedPrice.toLocaleString('id-ID')}` : 'Tidak tersedia');
 
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappLink = `https://wa.me/6281234567890?text=${encodedMessage}`;
-            // window.open(whatsappLink, '_blank');
+                // Show success message
+                successMsg.classList.remove('hidden');
+
+                // Reset button state
+                submitButton.textContent = 'Kirim Pesanan';
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
+
+                // Reset form and clear localStorage after a delay
+                setTimeout(() => {
+                    form.reset();
+                    clearFeedback(); // Clear all feedback after reset
+                    successMsg.classList.add('hidden');
+                    priceDisplay.textContent = ''; // Clear price display
+                    // Clear localStorage for all form inputs
+                    form.querySelectorAll('input[id], select[id]').forEach(input => localStorage.removeItem(input.id));
+                }, 3000); // Pesan akan hilang setelah 3 detik
+
+                // Open WhatsApp with pre-filled message
+                const whatsappMessage = `Halo One Top Up Zone, saya ingin top up game:
+                Game: ${selectedGame}
+                Jumlah: ${selectedDiamonds}
+                User ID: ${userID}
+                Nickname: ${nickname}
+                Email: ${email}
+                Metode Pembayaran: ${paymentMethod}
+                Estimasi Harga: ${estimatedPrice ? `Rp${estimatedPrice.toLocaleString('id-ID')}` : 'Tidak tersedia'}
+
+                Terima kasih!`;
+
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                const whatsappLink = `https://wa.me/6281234567890?text=${encodedMessage}`;
+                window.open(whatsappLink, '_blank'); // Open in new tab
+            }, 1000); // Simulate network delay
         });
 
-        const initialGame = localStorage.getItem('gameSelect');
-        if (initialGame && diamondOptions[initialGame]) {
-            gameSelect.value = initialGame;
-            gameSelect.dispatchEvent(new Event('change'));
-            const savedDiamondQty = localStorage.getItem('diamondSelect');
-            if (savedDiamondQty) {
-                diamondSelect.value = savedDiamondQty;
+        // --- 6. Local Storage for Form State ---
+        function saveFormState() {
+            form.querySelectorAll('input[id], select[id]').forEach(input => {
+                localStorage.setItem(input.id, input.value);
+            });
+        }
+
+        // --- 7. Game Image Click & Auto-Select ---
+        document.querySelectorAll('#games img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => {
+                const gameName = img.alt;
+                gameSelect.value = gameName;
+                gameSelect.dispatchEvent(new Event('change')); // Trigger change to populate diamonds
+                document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+                saveFormState(); // Save state
+            });
+        });
+
+        // --- 8. Load Initial Form State on Page Load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load saved values
+            form.querySelectorAll('input[id], select[id]').forEach(input => {
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+            });
+
+            // Manually trigger change for gameSelect to populate diamond options
+            if (gameSelect.value) {
+                gameSelect.dispatchEvent(new Event('change'));
+            }
+            // Manually trigger change for diamondSelect to update price
+            if (diamondSelect.value) {
                 diamondSelect.dispatchEvent(new Event('change'));
             }
-        }
+            // Manually trigger input for userID to show nickname feedback
+            if (userIDInput.value) {
+                userIDInput.dispatchEvent(new Event('input'));
+            }
+        });
     </script>
 </body>
 </html>
