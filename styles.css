@@ -69,3 +69,6 @@
   height: auto;
   margin-bottom: 12px;
 }
+.group {
+  background-clip: padding-box;
+}
