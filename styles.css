@@ -59,7 +59,7 @@
   padding: 1rem;
 }
 .game-card img {
-  max-width: 140px;  /* maksimal lebar 140px */
+  max-width: 180px;  /* maksimal lebar 180px */
   width: 100%;       /* tapi juga responsif */
   height: auto;
   display: block;
