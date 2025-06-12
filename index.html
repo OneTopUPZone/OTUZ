@@ -153,35 +153,37 @@
 </body>
 </html>
 <script>
-  const form = document.getElementById('topupForm');
-  const scriptURL = 'https://script.google.com/macros/s/PASTE_URL_KAMU_DI_SINI/exec';
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const data = {
-      game: document.getElementById('gameSelect').value,
-      diamond: document.getElementById('diamondSelect').value,
-      userid: document.getElementById('userid').value,
-      email: document.getElementById('email').value,
-      payment: document.getElementById('payment').value
-    };
-
-    fetch(scriptURL, {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(res => {
-      if (res.ok) {
-        alert('✅ Pesanan berhasil dikirim!');
-        form.reset();
-      } else {
-        alert('❌ Gagal mengirim. Coba lagi.');
-      }
-    });
-  });
-</script>
-
+  <!-- Game List -->
+<section id="games" class="py-20 px-6 max-w-6xl mx-auto">
+  <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Pilih Game</h3>
+  <div class="game-list">
+    <div class="game-card">
+      <img src="images/Mobile-Legend.png" alt="MLBB" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">Mobile Legends</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/FF.png" alt="Free Fire" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">Free Fire</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/PUBGM.png" alt="PUBG" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">PUBG Mobile</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/Genshin-Impact.png" alt="Genshin" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">Genshin Impact</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/Valorant.png" alt="Valorant" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">Valorant</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/HOK.png" alt="HOK" class="mx-auto mb-5">
+      <h4 class="font-semibold text-black-500">Honor of Kings</h4>
+    </div>
+    <div class="game-card">
+      <img src="images/PB.png" alt="PB" class="mx-auto mb-3">
+      <h4 class="font-semibold text-black-300">Point Blank</h4>
+    </div>
+  </div>
+</section>
