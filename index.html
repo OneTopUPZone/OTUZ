@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>One Top Up - Top Up Game</title>
-  <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-400 text-gray-800 font-sans">
@@ -32,42 +31,41 @@
   <!-- Game List -->
   <section id="games" class="py-20 px-6 max-w-6xl mx-auto">
     <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Pilih Game</h3>
-    <div class="game-list grid grid-cols-2 md:grid-cols-3 gap-6">
-
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       <!-- Game Card Template -->
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/Mobile-Legend.png" alt="MLBB" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mobile Legends</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mobile Legends</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/FF.png" alt="FF" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Free Fire</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Free Fire</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/PUBGM.png" alt="PUBGM" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">PUBG Mobile</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">PUBG Mobile</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/Genshin-Impact.png" alt="Genshin" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Genshin Impact</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Genshin Impact</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/Valorant.png" alt="Valorant" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Valorant</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Valorant</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/HOK.png" alt="HOK" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Honor Of Kings</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Honor Of Kings</h4>
       </div>
 
-      <div class="game-card group flex flex-col items-center justify-center bg-white rounded-xl shadow p-4 border-4 border-yellow-400 hover:shadow-yellow-500 transition-all duration-300">
+      <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
         <img src="images/PB.png" alt="PB" class="w-[140px] h-auto mb-3">
-        <h4 class="font-semibold text-black-300 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Point Blank</h4>
+        <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Point Blank</h4>
       </div>
     </div>
   </section>
@@ -78,7 +76,7 @@
     <form id="topupForm" class="space-y-5">
       <div>
         <label class="block font-semibold mb-1">Pilih Game</label>
-        <select id="gameSelect" class="form-input" required>
+        <select id="gameSelect" class="form-input w-full" required>
           <option value="">🎮 Pilih Game 🎮</option>
           <option>Mobile Legends</option>
           <option>Free Fire</option>
@@ -88,48 +86,28 @@
           <option>Honor Of Kings</option>
           <option>Point Blank</option>
         </select>
+      </div>
+
+      <div>
         <label class="block font-semibold mb-1">Jumlah Diamond / UC</label>
-        <select id="diamondSelect" class="form-input w-full mb-4" required>
+        <select id="diamondSelect" class="form-input w-full" required>
           <option value="">💎 Jumlah Diamond 💎</option>
         </select>
-        <script>
-          const gameSelect = document.getElementById('gameSelect');
-          const diamondSelect = document.getElementById('diamondSelect');
-
-          const diamondOptions = {
-            "Mobile Legends": [12, 28, 36, 56, 85, 170, 257, 344, 429, 514, 706, 878, 963, 1050, 1412, 2195],
-            "Free Fire": [5, 20, 50, 70, 100, 140, 210, 280, 355, 720, 1000, 1440, 2010, 4000],
-            "PUBG Mobile": [60, 180, 325, 660, 1800, 3850, 8100],
-            "Genshin Impact": [60, 300, 980, 1980, 3280, 6480],
-            "Valorant": [125, 420, 700, 1375, 2400, 4000, 8150],
-            "Honor Of Kings": [11, 22, 45, 90, 225, 450, 900, 1800],
-            "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000]
-          };
-
-          gameSelect.addEventListener('change', function () {
-            const selectedGame = this.value;
-            const options = diamondOptions[selectedGame] || [];
-            diamondSelect.innerHTML = '<option value="">💎 Jumlah Diamond 💎</option>';
-            options.forEach(value => {
-              const opt = document.createElement('option');
-              opt.value = value;
-              opt.textContent = value;
-              diamondSelect.appendChild(opt);
-            });
-          });
-        </script>
       </div>
+
       <div>
         <label class="block font-semibold mb-1">User ID</label>
-        <input type="text" class="form-input" placeholder="Masukkan User ID" required />
+        <input type="text" class="form-input w-full" placeholder="Masukkan User ID" required />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Email</label>
-        <input type="text" class="form-input" placeholder="Masukan Alamat Email Anda" required />
+        <input type="email" class="form-input w-full" placeholder="Masukan Alamat Email Anda" required />
       </div>
+
       <div>
         <label class="block font-semibold mb-1">Metode Pembayaran</label>
-        <select class="form-input" required>
+        <select class="form-input w-full" required>
           <option value="">💵 Pilih Pembayaran 💵</option>
           <option>QRIS</option>
           <option>OVO</option>
@@ -138,7 +116,8 @@
           <option>Transfer Bank</option>
         </select>
       </div>
-      <button type="submit" class="submit-btn">Kirim Pesanan</button>
+
+      <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded w-full">Kirim Pesanan</button>
     </form>
     <p id="successMsg" class="mt-4 text-green-600 text-center hidden">✅ Pesanan berhasil dikirim!</p>
   </section>
@@ -151,6 +130,31 @@
     <p class="text-sm mt-6 text-gray-500">© 2025 One Top Up Zone. All rights reserved.</p>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    const gameSelect = document.getElementById('gameSelect');
+    const diamondSelect = document.getElementById('diamondSelect');
+
+    const diamondOptions = {
+      "Mobile Legends": [12, 28, 36, 56, 85, 170, 257, 344, 429, 514, 706, 878, 963, 1050, 1412, 2195],
+      "Free Fire": [5, 20, 50, 70, 100, 140, 210, 280, 355, 720, 1000, 1440, 2010, 4000],
+      "PUBG Mobile": [60, 180, 325, 660, 1800, 3850, 8100],
+      "Genshin Impact": [60, 300, 980, 1980, 3280, 6480],
+      "Valorant": [125, 420, 700, 1375, 2400, 4000, 8150],
+      "Honor Of Kings": [11, 22, 45, 90, 225, 450, 900, 1800],
+      "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000]
+    };
+
+    gameSelect.addEventListener('change', function () {
+      const selectedGame = this.value;
+      const options = diamondOptions[selectedGame] || [];
+      diamondSelect.innerHTML = '<option value="">💎 Jumlah Diamond 💎</option>';
+      options.forEach(value => {
+        const opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = value;
+        diamondSelect.appendChild(opt);
+      });
+    });
+  </script>
 </body>
 </html>
