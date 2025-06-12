@@ -58,10 +58,14 @@
   gap: 1rem;
   padding: 1rem;
 }
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .game-card img {
-  max-width: 120px;  /* maksimal lebar 120px */
-  width: 100%;       /* tapi juga responsif */
+  width: 120px;
   height: auto;
-  display: block;
-  margin: 0 auto 1rem;
+  margin-bottom: 12px;
 }
