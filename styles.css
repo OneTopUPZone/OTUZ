@@ -43,8 +43,18 @@
   transform: scale(1.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+
 .hero-bg {
   background-image: url('teemo.png');
   background-size: cover;
   background-position: center;
+}
+
+/* Tambahan agar list game di tengah */
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
