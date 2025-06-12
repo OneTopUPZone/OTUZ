@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css" />
 
     <style>
-        /* CSS untuk FAQ */
+        /* CSS Kustom yang tidak bisa dilakukan dengan Tailwind langsung */
+
+        /* FAQ - Menambah/Mengurangi ikon pada summary */
         details[open] summary::after {
             content: "−";
         }
@@ -18,7 +20,15 @@
             font-weight: bold;
         }
 
-        /* Tambahkan style untuk Dark Mode */
+        /* Latar Belakang Kustom untuk Hero Section (jika ingin pakai gambar) */
+        .bg-hero-custom {
+            background-image: url('images/teemo.png'); /* Pastikan path gambar benar */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Styling Dark Mode (untuk menimpa default Tailwind atau mengatur properti kompleks) */
         .dark {
             background-color: #1a202c; /* bg-gray-900 */
             color: #e2e8f0; /* text-gray-200 */
@@ -39,15 +49,15 @@
         .dark .hover\:border-yellow-400:hover {
             border-color: #f6e05e; /* yellow-400 */
         }
-        .dark .form-input {
+        .dark .form-input-custom { /* Mengganti form-input manual */
             background-color: #4a5568; /* bg-gray-700 */
             color: #e2e8f0;
             border-color: #a0aec0;
         }
-        .dark .form-input::placeholder {
+        .dark .form-input-custom::placeholder {
             color: #cbd5e0;
         }
-        .dark .bg-gray-100 { /* Untuk contact section */
+        .dark .bg-gray-100 { /* Untuk contact section (yang sebelumnya bg-gray-100) */
             background-color: #1a202c;
         }
         .dark .text-gray-500 {
@@ -56,7 +66,6 @@
         .dark .text-gray-700 {
             color: #e2e8f0;
         }
-
         /* Custom style untuk pesan error/info di bawah input */
         .input-feedback {
             font-size: 0.875rem; /* text-sm */
@@ -97,7 +106,7 @@
         <div class="swiper-button-prev"></div>
     </div>
     
-    <section class="hero bg-blue-300 text-yellow-400 py-24 text-center">
+    <section class="hero bg-hero-custom text-yellow-400 py-24 text-center">
         <h2 class="text-5xl font-extrabold mb-4 drop-shadow">Top Up Game Murah & Terpercaya!</h2>
         <p class="text-lg opacity-90">Mobile Legends, Free Fire, PUBG Mobile, Genshin Impact, dan banyak lagi!</p>
     </section>
@@ -106,37 +115,37 @@
         <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Pilih Game</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/Mobile-Legend.png" alt="Mobile Legends" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Mobile Legends</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/FF.png" alt="Free Fire" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Free Fire</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/PUBGM.png" alt="PUBG Mobile" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">PUBG Mobile</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/Genshin-Impact.png" alt="Genshin Impact" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Genshin Impact</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/Valorant.png" alt="Valorant" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Valorant</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/HOK.png" alt="Honor Of Kings" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Honor Of Kings</h4>
             </div>
 
-            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300">
+            <div class="group flex flex-col items-center justify-center bg-white rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                 <img src="images/PB.png" alt="Point Blank" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-black opacity-0 group-hover:opacity-100 transition-opacity duration-300">Point Blank</h4>
             </div>
@@ -148,7 +157,7 @@
         <form id="topupForm" class="space-y-5">
             <div>
                 <label for="gameSelect" class="block font-semibold mb-1">Pilih Game</label>
-                <select id="gameSelect" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                <select id="gameSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
                     <option value="">🎮 Pilih Game 🎮</option>
                     <option>Mobile Legends</option>
                     <option>Free Fire</option>
@@ -163,13 +172,13 @@
 
             <div>
                 <label for="userID" class="block font-semibold mb-1">User ID</label>
-                <input type="text" id="userID" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukkan User ID" required />
+                <input type="text" id="userID" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" placeholder="Masukkan User ID" required />
                 <div id="userID-feedback" class="input-feedback"></div>
             </div>
 
             <div>
                 <label for="diamondSelect" class="block font-semibold mb-1">Jumlah Diamond / UC</label>
-                <select id="diamondSelect" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                <select id="diamondSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
                     <option value="">💎 Jumlah Diamond 💎</option>
                 </select>
                 <div id="diamondSelect-feedback" class="input-feedback"></div>
@@ -178,7 +187,7 @@
 
             <div>
                 <label for="paymentMethod" class="block font-semibold mb-1">Metode Pembayaran</label>
-                <select id="paymentMethod" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                <select id="paymentMethod" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
                     <option value="">💵 Pilih Pembayaran 💵</option>
                     <option>QRIS</option>
                     <option>OVO</option>
@@ -191,11 +200,11 @@
 
             <div>
                 <label for="email" class="block font-semibold mb-1">Email</label>
-                <input type="email" id="email" class="form-input w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="Masukan Alamat Email Anda" required />
+                <input type="email" id="email" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" placeholder="Masukan Alamat Email Anda" required />
                 <div id="email-feedback" class="input-feedback"></div>
             </div>
 
-            <button type="submit" id="submitButton" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded w-full">Kirim Pesanan</button>
+            <button type="submit" id="submitButton" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded w-full transition-colors duration-300">Kirim Pesanan</button>
         </form>
         <p id="successMsg" class="mt-4 text-green-600 text-center hidden">✅ Pesanan berhasil dikirim!</p>
     </section>
@@ -392,22 +401,31 @@
             const userID = this.value.trim();
             userIDFeedback.textContent = ''; // Clear previous feedback
 
+            if (!selectedGame) { // If no game selected, can't validate ID
+                showFeedback(userIDFeedback, 'Pilih game terlebih dahulu untuk validasi ID.', 'error');
+                return;
+            }
+
             if (userID.length < 5) { // Simple length check
                 showFeedback(userIDFeedback, 'User ID terlalu pendek', 'error');
                 return;
             }
 
-            if (selectedGame && gameNicknames[selectedGame] && gameNicknames[selectedGame][userID]) {
-                const nickname = gameNicknames[selectedGame][userID];
-                showFeedback(userIDFeedback, `Nickname: ${nickname}`, 'info');
-            } else if (selectedGame && userID.length >= 5) { // Only show invalid if game selected and length is okay
-                 showFeedback(userIDFeedback, 'User ID tidak ditemukan atau tidak valid', 'error');
-            }
+            // Simulate API call delay for nickname lookup
+            showFeedback(userIDFeedback, 'Mengecek User ID...', 'info');
+            setTimeout(() => {
+                if (gameNicknames[selectedGame] && gameNicknames[selectedGame][userID]) {
+                    const nickname = gameNicknames[selectedGame][userID];
+                    showFeedback(userIDFeedback, `Nickname: ${nickname}`, 'info');
+                } else {
+                    showFeedback(userIDFeedback, 'User ID tidak ditemukan atau tidak valid', 'error');
+                }
+            }, 500); // 0.5 second delay for simulation
             saveFormState(); // Save state
         });
         // Clear nickname when user ID input is focused
         userIDInput.addEventListener('focus', function() {
-            if (userIDFeedback.classList.contains('input-info')) {
+            if (userIDFeedback.classList.contains('input-info') || userIDFeedback.classList.contains('input-error')) {
                 userIDFeedback.textContent = '';
                 userIDFeedback.className = 'input-feedback';
             }
@@ -444,11 +462,16 @@
             if (!userIDInput.value.trim()) {
                 showFeedback(userIDFeedback, 'Masukkan User ID Anda.', 'error');
                 isValid = false;
-            } else if (!gameNicknames[gameSelect.value]?.[userIDInput.value.trim()]) {
-                // Also check if User ID is actually validated and found
-                showFeedback(userIDFeedback, 'User ID tidak valid atau tidak ditemukan.', 'error');
-                isValid = false;
+            } else {
+                // Ensure User ID is validated and nickname found before proceeding
+                const selectedGame = gameSelect.value;
+                const userID = userIDInput.value.trim();
+                if (!gameNicknames[selectedGame] || !gameNicknames[selectedGame][userID]) {
+                     showFeedback(userIDFeedback, 'User ID tidak valid atau tidak ditemukan.', 'error');
+                     isValid = false;
+                }
             }
+
             if (!diamondSelect.value) {
                 showFeedback(diamondSelectFeedback, 'Pilih jumlah diamond/UC.', 'error');
                 isValid = false;
@@ -559,13 +582,13 @@
             if (gameSelect.value) {
                 gameSelect.dispatchEvent(new Event('change'));
             }
-            // Manually trigger change for diamondSelect to update price
-            if (diamondSelect.value) {
-                diamondSelect.dispatchEvent(new Event('change'));
-            }
             // Manually trigger input for userID to show nickname feedback
             if (userIDInput.value) {
                 userIDInput.dispatchEvent(new Event('input'));
+            }
+            // Manually trigger change for diamondSelect to update price
+            if (diamondSelect.value) {
+                diamondSelect.dispatchEvent(new Event('change'));
             }
         });
     </script>
