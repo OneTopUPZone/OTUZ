@@ -22,21 +22,10 @@ document.getElementById("topupForm").addEventListener("submit", function (e) {
   const email = document.querySelector('input[placeholder="Masukan Alamat Email Anda"]').value;
   const payment = document.querySelector('select').value;
 
-  // Kirim data ke Google Sheets
-  fetch("https://script.google.com/macros/s/AKfycbwet2Q3PDBffXVKtRqRHtn5LYu0I5KEzzN8cUYX0-eXSRyRlD4KFKu2mzyRX/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ game, diamond, userid, email, payment })
-  })
-  .then(res => res.text())
-  .then(data => {
-    document.getElementById("successMsg").classList.remove("hidden");
-    document.getElementById("topupForm").reset();
-  })
-  .catch(err => {
-    console.error("Error:", err);
-    alert("❌ Gagal mengirim data. Coba lagi nanti.");
-  });
+  if (game && diamond && userId && email && payment) {
+    document.getElementById('successMsg').classList.remove('hidden');
+    document.getElementById('successMsg').textContent = "✅ Pesanan berhasil dikirim!";
+  } else {
+    alert("❌ Gagal mengirim data. Pastikan semua data terisi dengan benar.");
+  }
 });
