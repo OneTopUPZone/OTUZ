@@ -148,11 +148,17 @@
         .game-card-hok { background-image: url('images/HOK-BG.jpg'); }
         .game-card-pb { background-image: url('images/PB-BG.jpg'); }
         .game-card-stumble { background-image: url('images/STUMBLE-BG.jpg'); } /* Asumsi nama file */
+        .game-card-codm { background-image: url('images/CODM-BG.jpg'); } /* Baru */
+        .game-card-wildrift { background-image: url('images/WILDRIFT-BG.jpg'); } /* Baru */
+        .game-card-roblox { background-image: url('images/ROBLOX-BG.jpg'); } /* Baru */
+        .game-card-hsr { background-image: url('images/HSR-BG.jpg'); } /* Baru */
+        .game-card-coc { background-image: url('images/COC-BG.jpg'); } /* Baru */
+
 
         /* Latar Belakang Spesifik untuk Setiap Voucher (Tambahan) */
         .voucher-card-gplay { background-image: url('images/VOUCHER-BG.jpg'); } /* Asumsi latar belakang umum */
         .voucher-card-steam { background-image: url('images/STEAM-BG.jpg'); } /* Asumsi latar belakang spesifik */
-        .voucher-card-valo { background-image: url('images/Spotify-bg.jpg'); } /* Contoh voucher Valorant */
+        .voucher-card-spotify { background-image: url('images/Spotify-bg.jpg'); } /* Contoh voucher Spotify */
         .voucher-card-itunes { background-image: url('images/ITUNES-BG.jpg'); } /* Contoh voucher iTunes */
 
     </style>
@@ -165,7 +171,8 @@
             <nav>
                 <ul class="flex space-x-6 text-sm md:text-base font-medium">
                     <li><a href="#games" class="hover:text-yellow-300">Game</a></li>
-                    <li><a href="#vouchers" class="hover:text-yellow-300">Voucher</a></li> <li><a href="#order" class="hover:text-yellow-300">Top Up</a></li>
+                    <li><a href="#vouchers" class="hover:text-yellow-300">Voucher</a></li>
+                    <li><a href="#order" class="hover:text-yellow-300">Top Up</a></li>
                     <li><a href="#faq" class="hover:text-yellow-300">FAQ</a></li>
                     <li><a href="#contact" class="hover:text-yellow-300">Kontak</a></li>
                 </ul>
@@ -190,7 +197,8 @@
     </section>
 
     <section id="games" class="py-20 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">List Game</h3> <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">List Game</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
 
             <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-mlbb">
                 <img src="images/Mobile-Legend.png" alt="Mobile Legends" class="w-[140px] h-auto mb-3">
@@ -231,11 +239,38 @@
                 <img src="images/Stumbles.png" alt="Stumble Guys" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Stumble Guys</h4>
             </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-codm">
+                <img src="images/CODM.png" alt="Call of Duty: Mobile" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Call of Duty: Mobile</h4>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-wildrift">
+                <img src="images/Lol.png" alt="League of Legends: Wild Rift" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">League of Legends: Wild Rift</h4>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-roblox">
+                <img src="images/Roblox.png" alt="Roblox" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Roblox</h4>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-hsr">
+                <img src="images/Honkai.png" alt="Honkai: Star Rail" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Honkai: Star Rail</h4>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg game-card-coc">
+                <img src="images/Coc.png" alt="Clash of Clans" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Clash of Clans</h4>
+            </div>
+
         </div>
     </section>
 
     <section id="vouchers" class="py-20 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Voucher App</h3> <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <h3 class="text-3xl font-bold mb-10 text-center text-yellow-400">Voucher App</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
 
             <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg voucher-card-gplay">
                 <img src="images/Google-play.png" alt="Google Play" class="w-[140px] h-auto mb-3">
@@ -247,7 +282,7 @@
                 <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Steam Wallet</h4>
             </div>
             
-            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg voucher-card-valo">
+            <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl card-bg voucher-card-spotify">
                 <img src="images/Spotify.png" alt="Spotify Voucher" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Spotify Voucher</h4>
             </div>
@@ -256,15 +291,18 @@
                 <img src="images/Itunes.png" alt="iTunes Gift Card" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">iTunes Gift Card</h4>
             </div>
-            </div>
+        </div>
     </section>
 
 
     <section id="order" class="bg-white py-20 px-6 max-w-3xl mx-auto rounded-xl shadow-xl">
-        <h3 class="text-3xl font-bold mb-8 text-center text-black-700">⬇️ Top Up Disini ⬇️</h3> <form id="topupForm" class="space-y-5">
+        <h3 class="text-3xl font-bold mb-8 text-center text-black-700">⬇️ Top Up Disini ⬇️</h3>
+        <form id="topupForm" class="space-y-5">
             <div>
-                <label for="gameSelect" class="block font-semibold mb-1">Pilih Game / Voucher</label> <select id="gameSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
-                    <option value="">🎮 Pilih Game / Voucher 🎮</option> <optgroup label="Game">
+                <label for="gameSelect" class="block font-semibold mb-1">Pilih Game / Voucher</label>
+                <select id="gameSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
+                    <option value="">🎮 Pilih Game / Voucher 🎮</option>
+                    <optgroup label="Game">
                         <option>Mobile Legends</option>
                         <option>Free Fire</option>
                         <option>PUBG Mobile</option>
@@ -273,24 +311,33 @@
                         <option>Honor Of Kings</option>
                         <option>Point Blank</option>
                         <option>Stumble Guys</option>
+                        <option>Call of Duty: Mobile</option> 
+                        <option>League of Legends: Wild Rift</option> 
+                        <option>Roblox</option> 
+                        <option>Honkai: Star Rail</option> 
+                        <option>Clash of Clans</option> 
                     </optgroup>
                     <optgroup label="Voucher">
                         <option>Google Play</option>
                         <option>Steam Wallet</option>
                         <option>Spotify Voucher</option>
                         <option>iTunes Gift Card</option>
-                        </optgroup>
+                    </optgroup>
                 </select>
                 <div id="gameSelect-feedback" class="input-feedback"></div>
             </div>
 
             <div>
-                <label for="userID" class="block font-semibold mb-1">User ID / Nomor Serial Voucher</label> <input type="text" id="userID" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" placeholder="Masukkan User ID atau Nomor Serial" required /> <div id="userID-feedback" class="input-feedback"></div>
+                <label for="userID" class="block font-semibold mb-1">User ID / Nomor Serial Voucher</label>
+                <input type="text" id="userID" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" placeholder="Masukkan User ID atau Nomor Serial" required />
+                <div id="userID-feedback" class="input-feedback"></div>
             </div>
 
             <div>
-                <label for="diamondSelect" class="block font-semibold mb-1">Jumlah Diamond / UC / Nominal Voucher</label> <select id="diamondSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
-                    <option value="">💎 Jumlah / Nominal 💎</option> </select>
+                <label for="diamondSelect" class="block font-semibold mb-1">Jumlah Diamond / UC / Nominal Voucher</label>
+                <select id="diamondSelect" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500 dark:form-input-custom" required>
+                    <option value="">💎 Jumlah / Nominal 💎</option>
+                </select>
                 <div id="diamondSelect-feedback" class="input-feedback"></div>
                 <div id="priceDisplay" class="mt-2 text-sm text-green-700 font-medium"></div>
             </div>
@@ -420,9 +467,16 @@
             "Honor Of Kings": [11, 22, 45, 90, 225, 450, 900, 1800],
             "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000],
             "Stumble Guys": [250,800,1600,5000], /* Pastikan string untuk yang ada plusnya */
+            // --- Game Baru ---
+            "Call of Duty: Mobile": [80, 240, 420, 880, 2400, 5000], /* CP COD Mobile */
+            "League of Legends: Wild Rift": [125, 250, 500, 1000, 2000], /* Wild Cores */
+            "Roblox": [80, 400, 800, 1700, 4500, 10000], /* Robux */
+            "Honkai: Star Rail": [60, 300, 980, 1980, 3280, 6480], /* Oneiric Shards, sama seperti Genshin Impact */
+            "Clash of Clans": [80, 500, 1200, 2500, 6500, 14000], /* Gems */
+            // --- Voucher yang Sudah Ada ---
             "Google Play": [10000, 20000, 50000, 100000, 200000, 500000], /* Nominal Voucher */
             "Steam Wallet": [10000, 20000, 50000, 100000, 250000, 500000],
-            "Spotify Voucher": [1, 3, 12], /* Sama seperti Valorant game diamond */
+            "Spotify Voucher": [1, 3, 12], /* Masa langganan (bulan) */
             "iTunes Gift Card": [25000, 50000, 100000, 250000, 500000]
         };
         const priceMap = {
@@ -450,14 +504,31 @@
             "Stumble Guys": {
                 250: 12000, 800: 31000, 1600: 55000, 5000: 125000
             },
+            // --- Harga Game Baru ---
+            "Call of Duty: Mobile": {
+                80: 15000, 240: 45000, 420: 80000, 880: 160000, 2400: 400000, 5000: 850000
+            },
+            "League of Legends: Wild Rift": {
+                125: 15000, 250: 30000, 500: 60000, 1000: 120000, 2000: 240000
+            },
+            "Roblox": {
+                80: 15000, 400: 60000, 800: 110000, 1700: 220000, 4500: 550000, 10000: 1200000
+            },
+            "Honkai: Star Rail": {
+                60: 16000, 300: 78000, 980: 250000, 1980: 490000, 3280: 800000, 6480: 1600000
+            },
+            "Clash of Clans": {
+                80: 15000, 500: 75000, 1200: 170000, 2500: 330000, 6500: 800000, 14000: 1500000
+            },
+            // --- Harga Voucher yang Sudah Ada ---
             "Google Play": {
                 10000: 10000, 20000: 20000, 50000: 50000, 100000: 100000, 200000: 200000, 500000: 500000
             },
             "Steam Wallet": {
                 10000: 10000, 20000: 20000, 50000: 50000, 100000: 100000, 250000: 250000, 500000: 500000
             },
-            "Spotify Voucher": { /* Gunakan harga yang sama dengan Valorant game, jika sama */
-                1: 60000, 3: 200000, 12: 650000
+            "Spotify Voucher": { /* Harga per bulan */
+                1: 60000, 3: 180000, 12: 700000
             },
             "iTunes Gift Card": {
                 25000: 25000, 50000: 50000, 100000: 100000, 250000: 250000, 500000: 500000
@@ -499,6 +570,27 @@
                 "7000": "StumblePro",
                 "7001": "FallMaster"
             },
+            // --- Nickname Game Baru ---
+            "Call of Duty: Mobile": {
+                "8000": "CODMobilePro",
+                "8001": "CODMVeteran"
+            },
+            "League of Legends: Wild Rift": {
+                "9000": "WildRiftAce",
+                "9001": "WildRiftLegend"
+            },
+            "Roblox": {
+                "10000": "RobloxMaster",
+                "10001": "RobloxBuilder"
+            },
+            "Honkai: Star Rail": {
+                "11000": "Trailblazer",
+                "11001": "AstralExpress"
+            },
+            "Clash of Clans": {
+                "12000": "COCLeader",
+                "12001": "COCWarrior"
+            },
             // Voucher gaming tidak memerlukan validasi ID/nickname dalam simulasi ini
             "Google Play": {},
             "Steam Wallet": {},
@@ -532,7 +624,7 @@
         gameSelect.addEventListener('change', function () {
             const selectedGame = this.value;
             const options = diamondOptions[selectedGame] || [];
-            diamondSelect.innerHTML = '<option value="">💎 Jumlah / Nominal 💎</option>'; /* Perbaikan opsi default */
+            diamondSelect.innerHTML = '<option value="">💎 Jumlah / Nominal 💎</option>';
             // Handle non-numeric options like "1600+75" for Stumble Guys
             options.forEach(value => {
                 const opt = document.createElement('option');
@@ -552,7 +644,7 @@
 
             // Adjust User ID/Nomor Serial Voucher label and placeholder based on selection
             const userIDLabel = document.querySelector('label[for="userID"]');
-            if (['Google Play', 'Steam Wallet', ' Spotify Voucher', 'iTunes Gift Card'].includes(selectedGame)) {
+            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) { // Tambah Garena Shells di sini
                 userIDLabel.textContent = 'Nomor Serial / Kode Voucher';
                 userIDInput.placeholder = 'Masukkan Nomor Serial atau Kode Voucher';
             } else {
@@ -569,8 +661,8 @@
             const userID = this.value.trim();
             userIDFeedback.textContent = ''; // Clear previous feedback
 
-            // Skip validation for voucher types
-            if (['Google Play', 'Steam Wallet', 'Valorant Points Voucher', 'iTunes Gift Card'].includes(selectedGame)) {
+            // Skip validation for voucher types AND Garena Shells
+            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) {
                 if (userID.length > 0) { // Cek minimal ada input
                     showFeedback(userIDFeedback, 'Format akan divalidasi setelah pesanan dikirim.', 'info');
                 }
@@ -643,8 +735,8 @@
             if (!userID) {
                 showFeedback(userIDFeedback, 'Masukkan User ID atau Nomor Serial.', 'error');
                 isValid = false;
-            } else if (!['Google Play', 'Steam Wallet', 'Valorant Points Voucher', 'iTunes Gift Card'].includes(selectedGame)) {
-                // Only validate nickname for games, not vouchers
+            } else if (!['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) { // Tambah Garena Shells di sini
+                // Only validate nickname for games, not vouchers or Garena Shells
                 if (!gameNicknames[selectedGame] || !gameNicknames[selectedGame][userID]) {
                     showFeedback(userIDFeedback, 'User ID tidak valid atau tidak ditemukan.', 'error');
                     isValid = false;
@@ -681,9 +773,9 @@
                 const email = emailInput.value.trim();
                 const paymentMethod = paymentMethodSelect.value;
                 const estimatedPrice = priceMap?.[selectedGame]?.[selectedDiamonds];
-                // Get nickname only if it's a game, otherwise default for voucher
+                // Get nickname only if it's a game, otherwise default for voucher/Garena Shells
                 const nickname = gameNicknames[selectedGame]?.[userID] ||
-                    (['Google Play', 'Steam Wallet', 'Valorant Points Voucher', 'iTunes Gift Card'].includes(selectedGame) ? "N/A (Voucher)" : "N/A");
+                    (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame) ? "N/A (Voucher)" : "N/A");
 
                 console.log("Pesanan Baru:");
                 console.log("Game/Voucher:", selectedGame);
@@ -766,9 +858,10 @@
             // This is more complex because it depends on selectedGame which might not be set yet.
             // Best to let the change event on gameSelect handle it on initial load.
             // For now, if userID is pre-filled, clear its feedback unless gameSelect is already set and it's a game.
-            if (userIDInput.value && gameSelect.value && !['Google Play', 'Steam Wallet', 'Valorant Points Voucher', 'iTunes Gift Card'].includes(gameSelect.value)) {
+            const currentSelectedGame = gameSelect.value;
+            if (userIDInput.value && currentSelectedGame && !['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(currentSelectedGame)) {
                 userIDInput.dispatchEvent(new Event('input'));
-            } else if (userIDInput.value && gameSelect.value && ['Google Play', 'Steam Wallet', 'Valorant Points Voucher', 'iTunes Gift Card'].includes(gameSelect.value)) {
+            } else if (userIDInput.value && currentSelectedGame && ['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(currentSelectedGame)) {
                  // If it's a pre-filled voucher, show info feedback
                 showFeedback(userIDFeedback, 'Format akan divalidasi setelah pesanan dikirim.', 'info');
             }
