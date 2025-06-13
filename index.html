@@ -222,6 +222,10 @@
                 <img src="images/PB.png" alt="Point Blank" class="w-[140px] h-auto mb-3">
                 <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Point Blank</h4>
             </div>
+                        <div class="group flex flex-col items-center justify-center rounded-xl p-4 border-4 border-transparent hover:border-yellow-400 shadow transition-all duration-300 transform hover:scale-105 hover:shadow-xl game-card-bg game-card-pb">
+                <img src="images/Stumble.png" alt="Stumble Guys" class="w-[140px] h-auto mb-3">
+                <h4 class="font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">Stumble Guys</h4>
+            </div>
         </div>
     </section>
 
@@ -239,6 +243,7 @@
                     <option>Valorant</option>
                     <option>Honor Of Kings</option>
                     <option>Point Blank</option>
+                    <option>Stumble Guys</option>
                 </select>
                 <div id="gameSelect-feedback" class="input-feedback"></div>
             </div>
@@ -266,7 +271,10 @@
                     <option>OVO</option>
                     <option>DANA</option>
                     <option>GOPAY</option>
-                    <option>Transfer Bank</option>
+                    <option>ShoopePay</option>
+                    <option>Virtual Account</option>
+                    <option>Paypal</option>
+                    <option>Steam Wallet</option>
                 </select>
                 <div id="paymentMethod-feedback" class="input-feedback"></div>
             </div>
@@ -378,10 +386,10 @@
             "Genshin Impact": [60, 300, 980, 1980, 3280, 6480],
             "Valorant": [125, 420, 700, 1375, 2400, 4000, 8150],
             "Honor Of Kings": [11, 22, 45, 90, 225, 450, 900, 1800],
-            "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000]
-        };
-
-        const priceMap = {
+            "Point Blank": [1200, 2400, 6000, 12000, 24000, 60000],
+            "Stumble Guys": [250,800,1600+75,5000+275]
+            };
+            const priceMap = {
             "Mobile Legends": {
                 12: 3000, 28: 7000, 36: 9000, 56: 14000, 85: 21000, 170: 45000, 257: 67000, 344: 88000, 429: 110000, 514: 130000, 706: 175000, 878: 220000, 963: 240000, 1050: 260000, 1412: 350000, 2195: 540000
             },
@@ -402,23 +410,26 @@
             },
             "Point Blank": {
                 1200: 12000, 2400: 24000, 6000: 60000, 12000: 120000, 24000: 240000, 60000: 600000
+            },
+            "Stumble Guys": {
+                250: 12000, 800: 31000, 1600+75: 55000, 5000+275: 125000
             }
         };
 
         // Simulated Nickname Database (In real app, this would be an API call)
         const gameNicknames = {
             "Mobile Legends": {
-                "12345678": "ProPlayerMLBB",
-                "87654321": "NoobSlayer",
-                "99999999": "MythicLegend"
+                "1111": "ProPlayerMLBB",
+                "2222": "NoobSlayer",
+                "3333": "MythicLegend"
             },
             "Free Fire": {
-                "11223344": "GarenaPro",
-                "55667788": "HeadshotKing"
+                "1122": "GarenaPro",
+                "2211": "HeadshotKing"
             },
             "Genshin Impact": {
-                "100000000": "TravelerAether",
-                "100000001": "Luminesce"
+                "1000": "TravelerAether",
+                "1001": "Luminesce"
             },
             // Add more games and IDs/nicknames as needed
         };
