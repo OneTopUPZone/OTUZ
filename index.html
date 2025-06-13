@@ -192,7 +192,7 @@
     </div>
     
     <section class="hero bg-hero-custom text-yellow-400 py-24 text-center">
-        <h2 class="text-5xl font-extrabold mb-4 drop-shadow">Top Up Game Murah & Terpercaya!</h2>
+        <h2 class="text-5xl font-extrabold mb-4 drop-shadow bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600 shadow-lg">Top Up Game Murah & Terpercaya!</h2>
         <p class="text-lg opacity-90">Mobile Legends, Free Fire, PUBG Mobile, Genshin Impact, dan banyak lagi!</p>
     </section>
 
@@ -311,11 +311,11 @@
                         <option>Honor Of Kings</option>
                         <option>Point Blank</option>
                         <option>Stumble Guys</option>
-                        <option>Call of Duty: Mobile</option> 
-                        <option>League of Legends: Wild Rift</option> 
-                        <option>Roblox</option> 
-                        <option>Honkai: Star Rail</option> 
-                        <option>Clash of Clans</option> 
+                        <option>Call of Duty: Mobile</option>
+                        <option>League of Legends: Wild Rift</option>
+                        <option>Roblox</option>
+                        <option>Honkai: Star Rail</option>
+                        <option>Clash of Clans</option>
                     </optgroup>
                     <optgroup label="Voucher">
                         <option>Google Play</option>
@@ -644,7 +644,7 @@
 
             // Adjust User ID/Nomor Serial Voucher label and placeholder based on selection
             const userIDLabel = document.querySelector('label[for="userID"]');
-            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) { // Tambah Garena Shells di sini
+            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(selectedGame)) { // Tambah Garena Shells di sini
                 userIDLabel.textContent = 'Nomor Serial / Kode Voucher';
                 userIDInput.placeholder = 'Masukkan Nomor Serial atau Kode Voucher';
             } else {
@@ -662,7 +662,7 @@
             userIDFeedback.textContent = ''; // Clear previous feedback
 
             // Skip validation for voucher types AND Garena Shells
-            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) {
+            if (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(selectedGame)) {
                 if (userID.length > 0) { // Cek minimal ada input
                     showFeedback(userIDFeedback, 'Format akan divalidasi setelah pesanan dikirim.', 'info');
                 }
@@ -735,7 +735,7 @@
             if (!userID) {
                 showFeedback(userIDFeedback, 'Masukkan User ID atau Nomor Serial.', 'error');
                 isValid = false;
-            } else if (!['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame)) { // Tambah Garena Shells di sini
+            } else if (!['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(selectedGame)) { // Tambah Garena Shells di sini
                 // Only validate nickname for games, not vouchers or Garena Shells
                 if (!gameNicknames[selectedGame] || !gameNicknames[selectedGame][userID]) {
                     showFeedback(userIDFeedback, 'User ID tidak valid atau tidak ditemukan.', 'error');
@@ -775,7 +775,7 @@
                 const estimatedPrice = priceMap?.[selectedGame]?.[selectedDiamonds];
                 // Get nickname only if it's a game, otherwise default for voucher/Garena Shells
                 const nickname = gameNicknames[selectedGame]?.[userID] ||
-                    (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(selectedGame) ? "N/A (Voucher)" : "N/A");
+                    (['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(selectedGame) ? "N/A (Voucher)" : "N/A");
 
                 console.log("Pesanan Baru:");
                 console.log("Game/Voucher:", selectedGame);
@@ -859,9 +859,9 @@
             // Best to let the change event on gameSelect handle it on initial load.
             // For now, if userID is pre-filled, clear its feedback unless gameSelect is already set and it's a game.
             const currentSelectedGame = gameSelect.value;
-            if (userIDInput.value && currentSelectedGame && !['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(currentSelectedGame)) {
+            if (userIDInput.value && currentSelectedGame && !['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(currentSelectedGame)) {
                 userIDInput.dispatchEvent(new Event('input'));
-            } else if (userIDInput.value && currentSelectedGame && ['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card', 'Garena Shells'].includes(currentSelectedGame)) {
+            } else if (userIDInput.value && currentSelectedGame && ['Google Play', 'Steam Wallet', 'Spotify Voucher', 'iTunes Gift Card'].includes(currentSelectedGame)) {
                  // If it's a pre-filled voucher, show info feedback
                 showFeedback(userIDFeedback, 'Format akan divalidasi setelah pesanan dikirim.', 'info');
             }
